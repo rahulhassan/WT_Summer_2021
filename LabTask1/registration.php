@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Registration Form</title>
@@ -7,7 +8,7 @@
 		
 		<hr>
 		
-		<form>
+		<form action="" method="post">
 			<table>
 				<tr>
 				<td>Full Name :</td>
