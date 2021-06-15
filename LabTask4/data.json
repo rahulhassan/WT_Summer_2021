@@ -1,10 +1,12 @@
-{
-    "name": "Rahul Hassan",
-    "email": "specialistrahul@gmail.com",
-    "password": "jdhbfjdfs6",
-    "comment": "I am a student.",
-    "gender": "Male",
-    "hobby1": "Singing",
-    "hobby2": "Dancing",
-    "hobby3": "Reading"
-}
+[
+    {
+        "name": "Rahul Hassan",
+        "email": "specialistrahul@gmail.com",
+        "password": "jsdbfuss444",
+        "comment": "I am a Student",
+        "gender": "Male",
+        "hobby1": "Singing",
+        "hobby2": "Dancing",
+        "hobby3": "Reading"
+    }
+]
