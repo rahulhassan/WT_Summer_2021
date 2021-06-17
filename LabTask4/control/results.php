@@ -3,7 +3,7 @@
     $validateemail = $validatepass = $validatecmt= "";
     $validatecheckbox = "";
     $validateradio = "";
-    $h1 = $h2 = $h3 = $infoh = $infog = $target_file=  "";
+    $h1 = $h2 = $h3 = $infoh = $infog = $target_file= $filerr = $img= "";
     $name = $email = $gender = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -48,7 +48,7 @@
             $lowercase = preg_match('@[a-z]@', $password);
             
             if(strlen($password) < 6 || !$number || !$uppercase || !$lowercase) {
-                $validatepass = "Password must be at least 6 characters and must contain at least one Number, one Upper case & one Lower case letter";
+                $validatepass = "Password must be 6 characters and at least one Number, one Upper case & one Lower case letter";
             } else {
                 $validatepass = "Your password is entered";
             }
@@ -87,10 +87,10 @@
         $target_file = "files/".$_FILES["filetoupload"]["name"];
 
         if(move_uploaded_file($_FILES["filetoupload"]["tmp_name"], $target_file)){
-            echo "You have uploaded ".$_FILES["filetoupload"]["name"];
-            echo "<img src=".$target_file.">";
+            $filerr = "You have uploaded ".$_FILES["filetoupload"]["name"];
+            $img = "<img src=".$target_file.">";
         } else{
-            echo "Sorry, there was an error uploading your file.";
+            $filerr= "Sorry, there was an error uploading your file.";
         }
 
     }

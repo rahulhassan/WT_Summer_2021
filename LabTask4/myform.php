@@ -1,6 +1,7 @@
 <?php 
-	include "control/process.php";
+	
 	include "control/results.php";
+	include "control/process.php";
 
 ?>
 <!DOCTYPE html>
@@ -75,6 +76,10 @@
 					<td>Please Choose a file :</td>
 					<td>
 						<input type="file" name="filetoupload">
+						<?php 
+							echo $img."<br>";
+							echo $filerr; 
+						?>
 					</td>
 				</tr>
 				<tr>

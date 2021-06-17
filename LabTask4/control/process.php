@@ -5,12 +5,23 @@
         'name'=> $_POST['fname'],
         'email'=> $_POST['email'],
         'password'=> $_POST['password'],
-        'comment'=> $_POST['comment'],
-        'gender'=> $_POST['gender'],
-        'hobby1' => $_POST['hobby1'],
-        'hobby2' => $_POST['hobby2'],
-        'hobby3' => $_POST['hobby3'],
+        'comment'=> $_POST['comment']
         );
+        if(isset($_REQUEST["gender"])){
+            $formdata['gender']=$_REQUEST["gender"];
+        }
+
+        if(isset($_REQUEST["hobby1"])){
+            $formdata['hobby1']=$_REQUEST["hobby1"];
+        }
+        if(isset($_REQUEST["hobby2"])){
+            $formdata['hobby2']=$_REQUEST["hobby2"];
+        }
+        if(isset($_REQUEST["hobby3"])){
+            $formdata['hobby3']=$_REQUEST["hobby3"];
+        }
+
+
         $existingdata = file_get_contents('data.json');
         $tempJSONdata = json_decode($existingdata, true);
         $tempJSONdata[] =$formdata;
