@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2021 at 08:08 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Nov 10, 2020 at 06:53 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mydb2`
+-- Database: `mydb`
 --
 
 -- --------------------------------------------------------
@@ -44,8 +45,8 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`username`, `password`, `firstname`, `email`, `address`, `dob`, `gender`, `profession`, `interests`) VALUES
-('hsa10', '123456', 'Rahul', 'rahul@email.com', 'Mirpur', '1990-12-20', 'male', 'Academician', 'music'),
-('jhon', '123', 'Alex', 'alex6@email.com', 'Bashundhara', '1991-08-07', 'female', 'student', 'sports');
+('hsa10', '123456', 'Sazzad', 'sazzad@aiub.edu', 'Aiub', '19/12/19', 'male', 'Academician', 'music'),
+('jhon', '123', 'jhon', 'jhon@email.com', 'bashundhara', '11/11/2001', 'male', 'student', 'sports');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
