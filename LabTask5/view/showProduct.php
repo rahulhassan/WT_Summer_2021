@@ -1,16 +1,12 @@
 <?php
     session_start();
-    include "../model/db.php";
+    include "../control/showProductCheck.php";
  
 	if(empty($_SESSION["username"])) // Destroying All Sessions
 	{
 		header("Location: ../control/login.php"); // Redirecting To Home Page
 	}
-
-    error_reporting(0);
-	$connection = new db();
-    $conobj=$connection->OpenCon();
-    $userQuery1=$connection->showProduct($conobj,"product",$_REQUEST["srch_product"]);
+	
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -27,7 +23,7 @@
 	<form action="" method="post">
 
         Search by Category : <br>
-        <input type='text' name='srch_product' value="" >
+        <input type='text' name='srch_product'>
         <input name='search' type='submit' value='search'> 
     </form>
 		<table>
@@ -43,19 +39,15 @@
 			</thead>
 			
 			<tbody>
-                <?php
-					while($row = $userQuery1->fetch_assoc()){
-				?>
 				<tr>
 					
-					<td><?php echo $row['P_id']; ?></td>
-					<td><?php echo $row['P_Name']; ?></td>
-					<td><?php echo $row['P_Desc']; ?></td>
-					<td><?php echo $row['P_Category']; ?></td>
-					<td><?php echo $row['P_Price']; ?></td>
-                    <td><img src="<?php echo $row['P_Picture'];?>" width="40px" alt=""> </td>
+					<td><?php echo $pid; ?></td>
+					<td><?php echo $pnmae; ?></td>
+					<td><?php echo $pdesc; ?></td>
+					<td><?php echo $pcategoy; ?></td>
+					<td><?php echo $pprice; ?></td>
+                    <td><img src="<?php echo $ppicture;?>" width="40px" alt=""> </td>
 				</tr>
-				<?php } ?>
 			<tbody>
 			
 		</table>
