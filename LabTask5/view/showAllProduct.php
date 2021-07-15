@@ -1,8 +1,14 @@
 <?php
+	session_start();
     include "../model/db.php";
+ 
+	if(empty($_SESSION["username"])) // Destroying All Sessions
+	{
+		header("Location: ../control/login.php"); // Redirecting To Home Page
+	}
+
 	$connection = new db();
     $conobj=$connection->OpenCon();
-    
     $userQuery=$connection->ShowAll($conobj,"product");
 ?>
 <!DOCTYPE HTML>

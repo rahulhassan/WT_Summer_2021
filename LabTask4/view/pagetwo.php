@@ -24,13 +24,29 @@ $firstname=$email=$dob="";
 $connection = new db();
 $conobj=$connection->OpenCon();
 
+//$userQuery=$connection->CheckUser($conobj,"student",$_SESSION["username"],$_SESSION["password"]);
 $userQuery1=$connection->CheckUser1($conobj,"student",$_REQUEST["srch_username"]);
 
+// if ($userQuery->num_rows!=null) {
+//   if ($userQuery->num_rows > 0) {
+
+//     while($row = $userQuery->fetch_assoc()) {
+//       $firstname=$row["firstname"];
+//       $email=$row["email"];
+//       $dob =$row["dob"];
+//       if(  $row["gender"]=="female" )
+//       { $radio1="checked"; }
+//       else if($row["gender"]=="male")
+//       { $radio2="checked"; }
+//       else{$radio3="checked";}  
+//     } 
+//   }
+// }
 if ($userQuery1->num_rows!=null) {
   if ($userQuery1->num_rows > 0) {
 
       while($row = $userQuery1->fetch_assoc()) {
-        $username=$row["username"];
+        $username = $row["username"];
         $firstname=$row["firstname"];
         $email=$row["email"];
         $dob =$row["dob"];
@@ -54,12 +70,12 @@ Search by username : <br>
 </form>
 <form action='' method='post'>
 <h2>Update Form</h2>
-  <input type="hidden" name="username">
+<input type="hidden" name="username" value="<?php echo $username; ?>">
   First Name : <input type='text' name='firstname' value="<?php echo $firstname; ?>"> <br><br>
 
   Email : <input type='text' name='email' value="<?php echo $email; ?>" ><br><br>
 
-  DOB : <input type="date" name="dob" value="<?php echo $dob; ?>"> <br><br>
+  DOB : <input type="date" placeholder="dd/mm/yyyy" name="dob" value="<?php echo $dob; ?>"> <br><br>
 
   Gender:
   <input type='radio' name='gender' value='female'<?php echo $radio1; ?>>Female

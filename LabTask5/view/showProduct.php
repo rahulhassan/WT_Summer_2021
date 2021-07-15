@@ -1,9 +1,15 @@
 <?php
+    session_start();
     include "../model/db.php";
+ 
+	if(empty($_SESSION["username"])) // Destroying All Sessions
+	{
+		header("Location: ../control/login.php"); // Redirecting To Home Page
+	}
+
     error_reporting(0);
 	$connection = new db();
     $conobj=$connection->OpenCon();
-    
     $userQuery1=$connection->showProduct($conobj,"product",$_REQUEST["srch_product"]);
 ?>
 <!DOCTYPE HTML>
@@ -15,7 +21,9 @@
 		</head>
 	<body>
     <a href="pageone.php">Back</a>
-    <button> <a href="showAllProduct.php">Show All Product</a> </button>
+   	<a href="showAllProduct.php"> <input type="button" value="Show All Product" ></a>
+	   
+	<br><br>
 	<form action="" method="post">
 
         Search by Category : <br>

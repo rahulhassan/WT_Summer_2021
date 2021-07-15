@@ -12,7 +12,7 @@ if (isset($_POST['update'])) {
     {
         $connection = new db();
         $conobj=$connection->OpenCon();
-        $userQuery=$connection->UpdateUser($conobj,"student",$_SESSION["username"],$_POST['firstname'],$_POST['email'], $_POST['dob'],$_POST['gender']);
+        $userQuery=$connection->UpdateUser($conobj,"student",$_POST["username"],$_POST['firstname'],$_POST['email'], $_POST['dob'],$_POST['gender']);
         if($userQuery==TRUE)
         {
             echo "Update successful"; 

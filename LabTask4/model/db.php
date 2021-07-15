@@ -4,7 +4,7 @@ class db{
 function OpenCon()
  {
 
-//$susername="";
+$sinfo="";
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "";
@@ -48,12 +48,9 @@ function searchUser($conn,$table,$susername)
     if ($result->num_rows > 0) {
     
         while($row = $result->fetch_assoc()) {
-        echo "Username: " . $row["username"]. "<br> Email: " . $row["email"]."<br>";
-        $_POST["email"]=$row["email"];
-           // $susername = $row["username"];
         }
     } else {
-        echo "0 results";
+        $sinfo= "0 results";
     }
 
 }
