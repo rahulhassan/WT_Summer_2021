@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2021 at 11:19 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Generation Time: Jul 15, 2021 at 07:47 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,7 +41,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`P_id`, `P_Name`, `P_Desc`, `P_Category`, `P_Price`, `P_Picture`) VALUES
-(1, 'asda', 'asdasd', 'asdas', 123, '../file/Screenshot_2017-02-27-19-20-46.jpg');
+(1, 'Otobi Table', 'Wood Table', 'Table', 5000, '../file/table_1.jpg'),
+(2, 'RFL Chair', 'Plastic Chair', 'Chair', 1200, '../file/chair_1.jpg'),
+(3, 'Regal Chair', 'Stainless Steel', 'Chair', 2000, '../file/chair_2.jpg'),
+(4, 'Hatil Bed', 'Wood Bed', 'Bed', 15000, '../file/bed_2.jpg');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +64,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `P_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `P_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

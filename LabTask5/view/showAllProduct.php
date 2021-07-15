@@ -45,7 +45,7 @@
 					<td><?php echo $row['P_Desc']; ?></td>
 					<td><?php echo $row['P_Category']; ?></td>
 					<td><?php echo $row['P_Price']; ?></td>
-                    <td><img src="<?php echo $row['P_Picture']; ?>" width="40px" alt=""></td>
+                    <td><img src="<?php echo $row['P_Picture']; ?>" width="150px" alt=""></td>
 				</tr>
 				<?php } ?>
 			<tbody>
