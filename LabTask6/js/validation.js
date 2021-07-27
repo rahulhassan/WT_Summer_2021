@@ -40,7 +40,7 @@ function validateForm() {
         document.getElementById("err-gender").innerHTML="---Choose your gender";
         return false;
     }
-    if (!hobby1.checked && !hobby2.checked&& !hobby3.checked) {
+    if (!hobby1.checked && !hobby2.checked && !hobby3.checked) {
     document.getElementById("err-chkbox").innerHTML=" ---Please select anyone";
         return false;
     }
